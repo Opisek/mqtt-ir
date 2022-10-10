@@ -9,7 +9,8 @@
 
 // Topics
 
-std::pair<const char*, int> mqttTopics[MQTT_TOPICCOUNT] = {
+#define IR_BUTTONS 6
+std::pair<const char*, int> mqttTopics[IR_BUTTONS] = {
   std::make_pair(MQTT_BASE "on", 0xDC3),
   std::make_pair(MQTT_BASE "lamp", 0xD82),
   std::make_pair(MQTT_BASE "cycle", 0xD90),
@@ -52,7 +53,7 @@ void loop() {
     while (WiFi.status() != WL_CONNECTED) delay(100);
   } else if (!mqttClient.connected()) { // connect mqtt
     if (mqttClient.connect((char*)mqttName.c_str(), MQTT_USERNAME, MQTT_PASSWORD, MQTT_BASE "available", 0, true, "offline")) {
-      for (int i = 0; i < MQTT_TOPICCOUNT; ++i) mqttClient.subscribe(mqttTopics[i].first);
+      for (int i = 0; i < IR_BUTTONS; ++i) mqttClient.subscribe(mqttTopics[i].first);
       mqttClient.publish(MQTT_BASE "available", "online", true);
     }
   } else mqttClient.loop(); // loop mqtt
@@ -60,7 +61,7 @@ void loop() {
 }
 
 void mqttCallback(char* topic, byte* payload, unsigned int length) {
-  for (int i = 0; i < MQTT_TOPICCOUNT; ++i) {
+  for (int i = 0; i < IR_BUTTONS; ++i) {
     if (std::strcmp(topic, mqttTopics[i].first) == 0) {
       sender.sendSymphony(mqttTopics[i].second, 12, 5);
       break;
