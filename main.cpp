@@ -7,7 +7,9 @@
 #include <ESP8266WiFi.h>
 #include <config.h>
 
-// Topics
+// Topic Section
+// Configure based on your experimental results
+// See line 68 for configuring your protocol
 
 #define IR_BUTTONS 6
 std::pair<const char*, int> mqttTopics[IR_BUTTONS] = {
@@ -61,9 +63,9 @@ void loop() {
 }
 
 void mqttCallback(char* topic, byte* payload, unsigned int length) {
-  for (int i = 0; i < IR_BUTTONS; ++i) {
+  for (int i = 0; i < IR_BUTTONS; ++i) { // a hash map could be used, but it would be an overkill for just six buttons
     if (std::strcmp(topic, mqttTopics[i].first) == 0) {
-      sender.sendSymphony(mqttTopics[i].second, 12, 5);
+      sender.sendSymphony(mqttTopics[i].second, 12, 5); // change as required
       break;
     }
   }
