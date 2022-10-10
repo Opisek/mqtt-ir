@@ -25,7 +25,7 @@ void connectWifi();
 
 WiFiClient wifiClient;
 PubSubClient mqttClient(MQTT_ADDRESS, MQTT_PORT, mqttCallback, wifiClient);
-IRsend sender(4);
+IRsend sender(IR_PIN);
 
 String mqttName;
 
