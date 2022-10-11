@@ -7,8 +7,8 @@ This project provides you with a simple **IoT interface** for devices controlled
 ## Requirements
 ### Hardware
 A dedicated device must be put together to be used with this piece of software. The following are key requirements for your circuit:
-- A development board supported by the **Arduino SDK** (recommendation: **WEMOS LOLIN D1 Mini** or other board incorporating an **ESP8266** microcontroller).
-- An **infrared light emitting diode** operating at the same frequency as your remote control (typically **940nm**) connected to one of the GPIO pins (recommendation: **Pin 4**).
+- A development board supported by the **Arduino SDK** (recommendation: **WEMOS LOLIN D1 Mini** or other board incorporating an **ESP8266** microcontroller)
+- An **infrared light emitting diode** operating at the same frequency as your remote control (typically **940nm**) connected to one of the GPIO pins (recommendation: **Pin 4**)
 
 ### Compilation
 The following Arduino SDK libraries must be included for a successful compilation:
