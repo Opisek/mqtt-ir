@@ -10,7 +10,7 @@ A dedicated device must be put together to be used with this piece of software. 
 - A development board supported by the **Arduino SDK** (recommendation: **WEMOS LOLIN D1 Mini** or other board incorporating an **ESP8266** microcontroller)
 - An **infrared light emitting diode** operating at the same frequency as your remote control (typically **940nm**) connected to one of the GPIO pins (recommendation: **GPIO 4**)
 
-<img src="https://user-images.githubusercontent.com/40141286/195071773-35e8a95d-5e5a-47d9-a13f-8144ff922d06.png" width=400px height=400px>
+<img src="https://user-images.githubusercontent.com/40141286/195091391-87d93f13-5386-4592-87bb-ed6f884c89c4.png" width=400px height=400px>
 
 ### Compilation
 The following Arduino SDK libraries must be included for a successful compilation:
