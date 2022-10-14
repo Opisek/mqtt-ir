@@ -19,7 +19,7 @@ The following Arduino SDK libraries must be included for a successful compilatio
 
 ### Infrastructure
 This project is meant to be incorporated into an IoT network. The following components are required for this element to function:
-- An MQTT Broker (recommendation: [Eclipse Mosquitto](https://mosquitto.org/))
+- An MQTT broker (recommendation: [Eclipse Mosquitto](https://mosquitto.org/))
 - An MQTT client and a front-end user interface (recommendation: [Home Assistant](https://www.home-assistant.io/))
 
 ## Configuration
