@@ -11,6 +11,8 @@
 #define MQTT_PORT 1883
 #define MQTT_USERNAME "username"
 #define MQTT_PASSWORD "password"
-#define MQTT_BASE "/bedroom/ceilinglamp/"
+#define MQTT_BASE "/bedroom/fan/"
 
 #define IR_PIN 4
+#define IR_BITS 12
+#define IR_REPEAT 5
